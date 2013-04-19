@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @counter.name %>
+</p>
+
+<p>
+  <b>Url Query:</b>
+  <%= @counter.urlquery %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @counter.site %>
+</p>
+
+<p>
+  <b>Nokogiri Search:</b>
+  <%= @counter.nokogirisearch %>
+</p>
+
+<p>
+    <%=    render :template => 'values/index' %>
+</p>
+
+<%= link_to 'Edit', edit_site_counter_path(@counter.site, @counter) %> |
+<%= link_to 'Back', site_path(@counter.site) %>
