@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Monilog::Application.config.secret_token = '41c479e3e7c83f84e492007cb5c4f860e4b3652e2bd9ebd0a2ea0411bc019d729fc38ab00d0cf0a87d879e8733783d1cf0918e08b35c1439b55ec0617aed9916'
+Monilog::Application.config.secret_token = '58732cdbec6660936eeda388a1ad30f6dab84ccae5e84250b8239291eb411c6c32aa9178a3662c6c16e384214689931ccd829af1cc035f411ca9b3ce173c08a1'
