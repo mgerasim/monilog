@@ -5,24 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :production, :staging do
-# gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
-  gem 'pg'
-end
-  
-group :development do
-    gem 'sqlite3'
-    gem 'rspec-rails'
-    gem 'annotate'
-end
-
-group :test do
-    gem 'rspec-rails'
-    gem 'webrat'
-    gem 'factory_girl_rails'
-    gem 'spork'
-    gem 'rspec'
-end
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -37,12 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'execjs'
-
-gem 'therubyracer'
 gem 'jquery-rails'
-
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -58,4 +36,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-gem 'nokogiri'

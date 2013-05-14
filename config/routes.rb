@@ -1,23 +1,4 @@
 Monilog::Application.routes.draw do
-
-  resources :values
-  
-  resources :counters
-
-  resources :counters do
-    resources :values
-  end
-
-  resources :sites do
-    resources :counters do
-	resources :value
-    end
-  end
-
-
- root :to => "sites#index"
- 
- 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
