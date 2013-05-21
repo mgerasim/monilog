@@ -1,11 +1,11 @@
-<h1>Listing counters</h1>
+<h1>Список показателей</h1>
 
-<table>
+<table class="table">
   <tr>
-    <th>Name</th>
-    <th>Url Query</th>
-    <th>Site</th>
-    <th>Nokogiri Search</th>
+    <th>Показатель мониторинга</th>
+    <th>Запрос</th>
+    <th>Объект мониторинга</th>
+    <th>Шаблон парсинга</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,17 +13,18 @@
 
 <% @counters.each do |counter| %>
   <tr>
-    <td><%= counter.name %></td>
+    <td><%= link_to counter.name, site_counter_path(@site, counter) %></td>
     <td><%= counter.urlquery %></td>
-    <td><%= counter.site %></td>
-    <td><%= counter.nokogirisearch %></td>
+    <td><%= counter.site.name %></td>
+    <td><%= counter.nokogirisearch %></td>    
     <td><%= link_to 'Show', site_counter_path(@site, counter) %></td>
     <td><%= link_to 'Edit', edit_site_counter_path(@site, counter) %></td>
     <td><%= link_to 'Destroy', site_counter_path(@site, counter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Counter', new_site_counter_url(@site) %>
+<%= link_to 'Новый показатель мониторинга', new_site_counter_url(@site) %>

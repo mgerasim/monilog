@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Имя:</b>
   <%= @site.name %>
 </p>
 
@@ -9,5 +8,5 @@
     <%=    render :template => 'counters/index' %>
 </p>
 
-<%= link_to 'Edit', edit_site_path(@site) %> |
-<%= link_to 'Back', sites_path %>
+<%= link_to 'Редактировать', edit_site_path(@site) %> |
+<%= link_to 'Назад в список объектов мониторинга', sites_path %>

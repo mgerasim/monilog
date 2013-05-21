@@ -1,9 +1,9 @@
-<h1>Listing values</h1>
+<h1>Список значений показателя</h1>
 
-<table>
+<table class="table">
   <tr>
-    <th>Counter</th>
-    <th>Response</th>
+    <th>Счетчик</th>
+    <th>Значение</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,7 +11,7 @@
 
 <% @values.each do |value| %>
   <tr>
-    <td><%= value.counter %></td>
+    <td><%= value.created_at.to_s %></td>
     <td><%= value.response %></td>
     <td><%= link_to 'Show', value %></td>
     <td><%= link_to 'Edit', edit_value_path(value) %></td>
@@ -22,5 +22,4 @@
 
 <br />
 
-<%= link_to 'New Value', new_value_path %>
 <%= link_to 'Добавить показание счётчика', new_counter_value_path(@counter) %> <br />

@@ -81,4 +81,12 @@ class SitesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def monit
+    site = Site.find(params[:id])
+    site.monit
+    respond_to do |format|
+        format.html { redirect_to sites_url }
+    end
+  end
 end

@@ -1,22 +1,20 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <b>Name:</b>
+  <b>Показатель мониторинга:</b>
   <%= @counter.name %>
 </p>
 
 <p>
-  <b>Url Query:</b>
+  <b>Строка запроса:</b>
   <%= @counter.urlquery %>
 </p>
 
 <p>
-  <b>Site:</b>
-  <%= @counter.site %>
+  <b>Объект мониторинга:</b>
+  <%= @counter.site.name %>
 </p>
 
 <p>
-  <b>Nokogiri Search:</b>
+  <b>Шаблон парсинга:</b>
   <%= @counter.nokogirisearch %>
 </p>
 
@@ -24,5 +22,5 @@
     <%=    render :template => 'values/index' %>
 </p>
 
-<%= link_to 'Edit', edit_site_counter_path(@counter.site, @counter) %> |
-<%= link_to 'Back', site_path(@counter.site) %>
+<%= link_to 'Редактировать', edit_site_counter_path(@counter.site, @counter) %> |
+<%= link_to 'Назад в список объектов мониторинга', site_path(@counter.site) %>

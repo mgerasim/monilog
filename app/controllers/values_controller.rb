@@ -30,16 +30,16 @@ class ValuesController < ApplicationController
     @value = Value.new
     @value.counter = Counter.find_by_id(params[:counter_id])
     
-    Rails.logger = Logger.new(STDOUT)
-    logger.debug "Person"
+#    Rails.logger = Logger.new(STDOUT)
+#    logger.debug "Person"
     
-    doc = Nokogiri::HTML(open(@value.counter.urlquery))
+#    doc = Nokogiri::HTML(open(@value.counter.urlquery))
     
-    doc.search(@value.counter.nokogirisearch).each do |link|
-	str = link.text.delete(Nokogiri::HTML("&nbsp;").text)
-	logger.debug str
-	@value.response = str.to_i
-    end
+#    doc.search(@value.counter.nokogirisearch).each do |link|
+#	str = link.text.delete(Nokogiri::HTML("&nbsp;").text)
+#	logger.debug str
+#	@value.response = str.to_i
+#    end
     
     @value.save
     

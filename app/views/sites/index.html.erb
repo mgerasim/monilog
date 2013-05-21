@@ -1,9 +1,10 @@
-<h1>Listing sites</h1>
+<h1>Список объектов мониторинга</h1>
 
-<table>
+<table class="table">
   <tr>
-    <th>Name</th>
-    <th>Url Domain</th>
+    <th>Имя</th>
+    <th>Домен</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,15 +12,17 @@
 
 <% @sites.each do |site| %>
   <tr>
-    <td><%= site.name %></td>
+    <td><%= link_to site.name, site %></td>
     <td><%= site.urldomain %></td>
+    <td><%= link_to 'Опросить', sites_monit_path(site) %></td>
     <td><%= link_to 'Show', site %></td>
     <td><%= link_to 'Edit', edit_site_path(site) %></td>
     <td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Site', new_site_path %>
+<%= link_to 'Добавить объект мониторинга', new_site_path %>

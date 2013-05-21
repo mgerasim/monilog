@@ -3,7 +3,9 @@ class Counter < ActiveRecord::Base
   attr_accessible :name, :urlquery, :value, :site_id, :nokogirisearch
   has_many :values
   
-#  COUNTER_TYPES = [
-#    ["ДВИФ Кол-во зарегестрировавшихся участников", "Valuedvif" ]
-#    ]
+  def monit
+    self.values << Value.new
+    self.save
+  end
+  
 end
