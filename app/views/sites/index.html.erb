@@ -4,20 +4,24 @@
   <tr>
     <th>Имя</th>
     <th>Домен</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <% if user_signed_in? and current_user.has_role? :admin %>
+	<th></th>
+	<th></th>
+        <th></th>
+	<th></th>
+    <% end %>
   </tr>
 
 <% @sites.each do |site| %>
   <tr>
     <td><%= link_to site.name, site %></td>
     <td><%= site.urldomain %></td>
-    <td><%= link_to 'Опросить', sites_monit_path(site) %></td>
-    <td><%= link_to 'Show', site %></td>
-    <td><%= link_to 'Edit', edit_site_path(site) %></td>
-    <td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if user_signed_in? and current_user.has_role? :admin %>
+        <td><%= link_to 'Опросить', sites_monit_path(site) %></td>
+	<td><%= link_to 'Show', site %></td>
+        <td><%= link_to 'Edit', edit_site_path(site) %></td>
+	<td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
 
   </tr>
 <% end %>
