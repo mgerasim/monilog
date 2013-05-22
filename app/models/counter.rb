@@ -8,4 +8,13 @@ class Counter < ActiveRecord::Base
     self.save
   end
   
+  def response_on(date)
+    value =  self.values.where("date(created_at) = ?",date).last
+    if (value == nil)
+	0
+    else
+	value.response
+    end
+  end
+  
 end
