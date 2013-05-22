@@ -20,11 +20,68 @@
     <td><%= link_to 'Show', site_counter_path(@site, counter) %></td>
     <td><%= link_to 'Edit', edit_site_counter_path(@site, counter) %></td>
     <td><%= link_to 'Destroy', site_counter_path(@site, counter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
   </tr>
 <% end %>
 </table>
 
-<br />
+<% @counters.each do |counter| %>
+    <h5><%= counter.name %></h5>
+
+
+<script type="text/javascript" charset="utf-8">
+
+$(function () {
+$('#container_chart').highcharts({
+chart: {
+type: 'line',
+marginRight: 130,
+marginBottom: 25
+},
+title: {
+text: 'Monthly Average Temperature',
+x: -20 //center
+},
+subtitle: {
+text: 'Source: WorldClimate.com',
+x: -20
+},
+xAxis: {
+type: "datetime"
+},
+yAxis: {
+title: {
+text: 'Temperature (°C)'
+},
+plotLines: [{
+value: 0,
+width: 1,
+color: '#808080'
+}]
+},
+tooltip: {
+valueSuffix: '°C'
+},
+legend: {
+layout: 'vertical',
+align: 'right',
+verticalAlign: 'top',
+x: -10,
+y: 100,
+borderWidth: 0
+},
+series: [{
+name: 'Tokyo',
+
+data: <%= (3.weeks.ago.to_date..Date.today).map { |date| counter.response_on(date)}.inspect %>
+}]
+});
+});
+</script>
+    
+    <div id="container_chart" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+    
+    
+    
+<% end %>
 
 <%= link_to 'Новый показатель мониторинга', new_site_counter_url(@site) %>
