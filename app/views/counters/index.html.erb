@@ -31,7 +31,7 @@
 <script type="text/javascript" charset="utf-8">
 
 $(function () {
-$('#container_chart').highcharts({
+$('#container_chart_<%= counter.id %>').highcharts({
 chart: {
 type: 'line',
 marginRight: 130,
@@ -79,7 +79,7 @@ data: <%= (3.weeks.ago.to_date..Date.today).map { |date| counter.response_on(dat
 });
 </script>
     
-    <div id="container_chart" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+    <div id="container_chart_<%= counter.id %>" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
     
     
     
