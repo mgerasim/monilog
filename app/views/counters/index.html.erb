@@ -38,11 +38,11 @@ marginRight: 130,
 marginBottom: 25
 },
 title: {
-text: 'Monthly Average Temperature',
+text: '<%=counter.name%>',
 x: -20 //center
 },
 subtitle: {
-text: 'Source: WorldClimate.com',
+text: '<%=counter.site.urldomain%>',
 x: -20
 },
 xAxis: {
@@ -50,7 +50,7 @@ type: "datetime"
 },
 yAxis: {
 title: {
-text: 'Temperature (°C)'
+text: 'Значение показателя'
 },
 plotLines: [{
 value: 0,
@@ -59,7 +59,7 @@ color: '#808080'
 }]
 },
 tooltip: {
-valueSuffix: '°C'
+valueSuffix: ''
 },
 legend: {
 layout: 'vertical',
@@ -70,8 +70,9 @@ y: 100,
 borderWidth: 0
 },
 series: [{
-name: 'Tokyo',
-
+name: ' ',
+pointInterval: <%= 1.day * 1000 %>,
+pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
 data: <%= (3.weeks.ago.to_date..Date.today).map { |date| counter.response_on(date)}.inspect %>
 }]
 });
