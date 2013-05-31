@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514210633) do
+ActiveRecord::Schema.define(:version => 20130531055407) do
 
   create_table "counters", :force => true do |t|
     t.string   "name"
     t.string   "urlquery"
     t.integer  "site_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "nokogirisearch"
+    t.integer  "position",       :default => 1
   end
 
   add_index "counters", ["site_id"], :name => "index_counters_on_site_id"
