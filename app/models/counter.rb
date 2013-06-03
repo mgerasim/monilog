@@ -1,6 +1,6 @@
 class Counter < ActiveRecord::Base
   belongs_to :site
-  attr_accessible :name, :urlquery, :value, :site_id, :nokogirisearch
+  attr_accessible :name, :urlquery, :value, :site_id, :nokogirisearch, :position
   has_many :values
   
   def monit

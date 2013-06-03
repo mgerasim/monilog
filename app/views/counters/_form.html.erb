@@ -12,16 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Наименование" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :urlquery %><br />
+    <%= f.label "Строка запрса" %><br />
     <%= f.text_field :urlquery %>
   </div>
+  
   <div class="field">
-    <%= f.label :nokogirisearch %><br />
+    <%= f.label "Шаблон распознания" %><br />
     <%= f.text_field :nokogirisearch %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Позиция" %><br />
+    <%= f.text_field :position %>
   </div>
   
   <div class="field">
