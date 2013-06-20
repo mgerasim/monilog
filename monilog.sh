@@ -13,3 +13,6 @@ wget -O /tmp/tmp.html http://monilog.herokuapp.com/counters/11/values/new
 wget -O /tmp/tmp.html http://monilog.herokuapp.com/counters/12/values/new
 wget -O /tmp/tmp.html http://monilog.herokuapp.com/counters/13/values/new
 wget -O /tmp/tmp.html http://monilog.herokuapp.com/counters/14/values/new
+wget -O /tmp/tmp.html http://monilog.herokuapp.com/counters/15/values/new
+wget -O /tmp/tmp.html http://monilog.herokuapp.com/counters/16/values/new
+wget -O /tmp/tmp.html http://monilog.herokuapp.com/counters/17/values/new

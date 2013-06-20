@@ -7,7 +7,7 @@ class Value < ActiveRecord::Base
   
   private
   def monit
-    doc = Nokogiri::HTML(open(self.counter.urlquery))
+    doc = Nokogiri::HTML(open(self.counter.urlquery, 'User-Agent' => 'Mozilla'))
     
     i = 0
     doc.search(self.counter.nokogirisearch).each do |link|
