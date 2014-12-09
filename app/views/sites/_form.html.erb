@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Мониторинг" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :urldomain %><br />
+    <%= f.label "Домен" %><br />
     <%= f.text_field :urldomain %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Сохранить", :class=>"btn btn-primary" %>
   </div>
 <% end %>

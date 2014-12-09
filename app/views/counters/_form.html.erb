@@ -31,10 +31,10 @@
   </div>
   
   <div class="field">
-    <%= f.label Site.human_attribute_name(:name) %><br />
+    <%= f.label "Мониторинг" %><br />
     <%= collection_select(:counter, :site_id, Site.all, :id, :name) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Сохранить", :class=>"btn btn-primary" %>
   </div>
 <% end %>

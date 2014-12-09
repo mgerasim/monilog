@@ -1,4 +1,4 @@
-<h1>Список показателей</h1>
+<h8>Список показателей</h8>
 
 <table class="table">
   <tr>
@@ -85,4 +85,4 @@ data: <%= (3.weeks.ago.to_date..Date.today).map { |date| counter.response_on(dat
     
 <% end %>
 
-<%= link_to 'Новый показатель мониторинга', new_site_counter_url(@site) %>
+<%= link_to 'Добавить показатель мониторинга', new_site_counter_url(@site), :class=>"btn btn-primary" %>
