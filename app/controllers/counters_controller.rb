@@ -2,7 +2,7 @@ class CountersController < ApplicationController
   # GET /counters
   # GET /counters.json
   def index
-    @counters = Counter.all
+    @counters = Counter.where(:site_id => params[:site_id])
 
     respond_to do |format|
       format.html # index.html.erb
